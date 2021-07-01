@@ -1,1 +1,53 @@
-<p>new works!</p>
+<h1>Create Game</h1>
+<form class="sign__form" [formGroup]="form">
+  <!-- {{ loginForm.value | json }} -->
+  <div class="row">
+    <div class="form-group col-6">
+      <label for="login_email">Rows</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <span class="fa fa-sort-numeric-asc"></span>
+          </span>
+        </div>
+        <input
+          formControlName="rows"
+          type="number"
+          class="form-control rounded-right"
+          name="email"
+          [ngClass]="{ 'is-invalid': f.rows.errors }"
+        />
+      </div>
+      <ul
+        class="invalid-feedback d-block"
+        *ngIf="f.rows.invalid && (f.rows.dirty || f.rows.touched)"
+      >
+        <li *ngIf="f.rows.errors.min">min: {{ f.rows.errors.min | json }}</li>
+      </ul>
+    </div>
+
+    <div class="form-group col-6">
+      <label for="login_password">Cols</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <span class="fa fa-sort-numeric-asc"></span>
+          </span>
+        </div>
+        <input
+          formControlName="cols"
+          type="number"
+          class="form-control rounded-right"
+          name="cols"
+          [ngClass]="{ 'is-invalid': f.cols.errors }"
+        />
+        <ul
+          class="invalid-feedback d-block"
+          *ngIf="f.cols.invalid && (f.cols.dirty || f.cols.touched)"
+        >
+          <li *ngIf="f.cols.errors.min">min: {{ f.cols.errors.min | json }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</form>
