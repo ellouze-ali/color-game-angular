@@ -5,12 +5,15 @@ import { GameRoutingModule } from './game-routing.module';
 import { GameComponent } from './game.component';
 import { NewComponent } from './new/new.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CaseComponent } from './case/case.component';
 
 
 @NgModule({
   declarations: [
     GameComponent,
-    NewComponent
+    NewComponent,
+    CaseComponent,
+    GameComponent
   ],
   imports: [
     CommonModule,

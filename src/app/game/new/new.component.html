@@ -51,3 +51,19 @@
     </div>
   </div>
 </form>
+
+
+
+<table width="100%">
+    <tbody >
+      <tr *ngFor="let row of table;let i = index">
+
+        <td *ngFor="let col of row;let j = index" (click)="handleCardClick(i,j)" class="p-2">
+          <app-case [color]="col"></app-case>
+        </td>
+        <!---->
+      </tr>
+      <!---->
+    </tbody>
+    <!---->
+</table>
