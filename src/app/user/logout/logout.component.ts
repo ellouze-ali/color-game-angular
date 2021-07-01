@@ -8,6 +8,7 @@ import { UserService } from '../user.service';
   styleUrls: ['./logout.component.css']
 })
 export class LogoutComponent implements OnInit {
+  loading: Boolean = false;
 
   constructor(private userService: UserService, private router: Router) {}
 
@@ -15,7 +16,9 @@ export class LogoutComponent implements OnInit {
   }
 
   handleLogoutClick() {
+    this.loading=true
     let observable =this.userService.logout().subscribe(() => {
+      this.loading=false
       this.router.navigate(['/']);
       observable.unsubscribe();
     });

@@ -1,1 +1,8 @@
-<p>loading works!</p>
+<div *ngIf="loading; then thenBlock; else elseBlock"></div>
+<ng-template #thenBlock>
+  Loading
+  <div class="spinner-border" role="status"></div>
+</ng-template>
+<ng-template #elseBlock>
+  <ng-content></ng-content>
+</ng-template>
