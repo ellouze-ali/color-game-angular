@@ -7,6 +7,7 @@ import { UserComponent } from './user.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { SharedModule } from '../shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { SharedModule } from '../shared/shared.module';
     FormsModule,
     ReactiveFormsModule,
     UserRoutingModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule,
     
   ]
 })

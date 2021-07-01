@@ -33,6 +33,13 @@ export class UserService {
   login({ password, email}: Credentials): Observable<User> {
     let obs: Observable<User>;
 
+    // let response = await this.http.get("https://jsonplaceholder.typicode.com/users", {params: params} ).toPromise()
+    // console.log("http reponse", response)
+    // if (response[0]){
+    //   localStorage.setItem(UserService.storageKey, JSON.stringify(user)
+    // }
+
+
     if (email === 'john@doe' && password === 'abcde' ){
       obs = of({
         id: '5fc62fdb5eb04def08ac913a',

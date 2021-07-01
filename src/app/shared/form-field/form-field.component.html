@@ -1,1 +1,27 @@
 <p>form-field works!</p>
+<div class="form-group">
+    <label for="%ID_DU_CHAMPS%">{{label}}</label>
+
+    <!-- on rajoute sur cet input-group la classe "is-invalid" si l'élément de formulaire est invalide --> 
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">
+          <!-- l'icon dépend de l'attribut type de l'input -->
+          <span class="fa fa-{{ icon }}"></span>
+        </span>
+      </div>
+
+      <!-- contenu projeté de la balise -->
+      <ng-content></ng-content>
+
+      <!-- affichage des erreurs SI PRESENTES ! -->
+      <div class="invalid-feedback d-block">
+        <ul>
+          <!-- une ligne par erreur -->
+          <li *ngFor="let item of errors | keyvalue">
+            {{item  | json}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
