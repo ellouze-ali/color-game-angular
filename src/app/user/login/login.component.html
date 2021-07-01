@@ -1,7 +1,7 @@
 <div>
     <h1>Login</h1>
 </div>
-<form class="sign__form" [formGroup]="form"   >
+<form class="sign__form" [formGroup]="form" (ngSubmit)="handleLoginClick()">
   
 
     <!-- {{ loginForm.value | json }} -->
@@ -44,6 +44,8 @@
                 <li *ngIf="f.password.errors.minlength">minlength: {{f.password.errors.minlength |json}}</li>
             </ul>
     </div>
+
+    <div class="alert alert-danger" *ngIf=err >{{err}}</div>
 
     <button class="btn btn-primary" type="submit">Login</button>
 </form>
