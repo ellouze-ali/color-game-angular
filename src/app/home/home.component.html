@@ -1,3 +1,3 @@
 <h1>Home</h1> 
-<a class="btn btn-primary"  *ngIf=!isAuthenticated routerLink="/user/login">Login</a>
-<a class="btn btn-primary"  *ngIf=isAuthenticated routerLink="/game/new">New Game</a>
+<a class="btn btn-primary"  appIfNoUserDirective routerLink="/user/login">Login</a>
+<a class="btn btn-primary"  appIfUserDirective routerLink="/game/new">New Game</a>
