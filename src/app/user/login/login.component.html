@@ -14,7 +14,7 @@
                     <span  class="fa fa-at"></span>
                 </span>                    
             </div>
-            <input formControlName="email" id="login_email" title="Email" type="email" class="form-control rounded-right is-valid" name="email" [ngClass]="{ 'is-invalid': f.email.errors ,'is-valid': !f.email.errors }"  ngModel>
+            <input formControlName="email" id="login_email" title="Email" type="email" class="form-control rounded-right is-valid" name="email" [ngClass]="{ 'is-invalid': f.email.errors ,'is-valid': !f.email.errors }">
         </div>
         <ul *ngIf="f.email.invalid && (f.email.dirty || f.email.touched)" class="text-danger">
             <li *ngIf="f.email.errors.required">required: {{f.email.errors.required}}</li>
@@ -37,7 +37,7 @@
                     <span class="fa fa-lock"></span>
                 </span>                    
             </div>
-            <input formControlName="password" id="login_password" title="Password" type="password" class="form-control rounded-right is-valid" name="password" [ngClass]="{ 'is-invalid': f.password.errors }" ngModel>
+            <input formControlName="password" id="login_password" title="Password" type="password" class="form-control rounded-right is-valid" name="password" [ngClass]="{ 'is-invalid': f.password.errors }">
         </div>
             <ul *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)" class="text-danger">
                 <li *ngIf="f.password.errors.required">required: {{f.password.errors.required}}</li>
