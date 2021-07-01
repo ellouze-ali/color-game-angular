@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from '../user/user.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  isAuthenticated = false;
+
+  constructor(public auth: UserService, protected router: Router) { }
 
   ngOnInit(): void {
+    // let observable= this.auth.user$.subscribe( () => {
+    //   this.isAuthenticated= true
+    // }),
+    
+    let observable =this.auth.user$.subscribe(() =>{
+      this.isAuthenticated= true;
+      observable.unsubscribe();
+    },(err) => {
+      this.isAuthenticated= false;
+      observable.unsubscribe();
+    })
+    
   }
 
 }
